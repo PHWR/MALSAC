@@ -43,25 +43,24 @@ begin
 entryA <= "1010";
 entryB <= "0101";
 Bi <= '0';
+assert outD = "0101" report "wrong case 1" severity failure;
 
 wait for period;
 
 entryA <= "1001";
 entryB <= "0001";
+assert outD = "1000" report "wrong case 1" severity failure;
 
 wait for period;
 
 entryA <= "0111";
 entryB <= "0111";
+assert outD = "0000" report "wrong case 1" severity failure;
 
 wait for period;
 
 entryA <= "1111";
 entryB <= "1111";
-
-wait for period;
-
-entryA <= "0000";
-entryB <= "0000";
+assert outD = "0000" report "wrong case 1" severity failure;
 
 
